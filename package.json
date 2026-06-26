@@ -10,7 +10,11 @@
     "build:server": "pnpm --filter server build",
     "build:client": "pnpm --filter client build",
     "build": "pnpm run build:server && pnpm run build:client",
-    "lint": "pnpm --filter server lint && pnpm --filter client lint"
+    "lint": "pnpm --filter server lint && pnpm --filter client lint",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "migration:run": "pnpm --filter server migration:run",
+    "migration:revert": "pnpm --filter server migration:revert"
   },
   "engines": {
     "node": ">=20"
